@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <form method="POST">
+            <label for="data">Enter text or URL:</label>
+            <input type="text" id="data" name="data" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+        {% if qr_code_base64 %}
+            <div class="qr-code">
+                <h2>Generated QR Code:</h2>
+                <img src="{{ qr_code_base64 }}" alt="Generated QR Code">
+            </div>
+        {% endif %}
+    </div>
+    <footer>
+        <p>Developed by Lloyd Draizen Martirez 👨🏻‍💻</p>
+    </footer>
+</body>
+</html>
