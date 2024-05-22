@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
@@ -16,6 +16,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 90%;
 }
 
 h1 {
@@ -33,7 +34,7 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: calc(100% - 2rem); /* Adjusted width to leave space for padding */
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
@@ -41,7 +42,6 @@ input[type="text"] {
 }
 
 button {
-
     background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
     color: white;
     padding: 1rem;
@@ -50,11 +50,9 @@ button {
     transition: 0.5s;
     border-radius: 10px;
     cursor: pointer;
-     
 }
 
 button:hover {
-    
     background-position: right center;
     color: #fff;
     text-decoration: none;
@@ -74,6 +72,7 @@ footer {
     color: white;
     text-align: center;
     width: 100%;
-    position: absolute;
+    position: fixed; /* Changed to fixed to ensure it stays at the bottom */
     bottom: 0;
+    padding: 1rem 0; /* Added padding for better spacing */
 }
